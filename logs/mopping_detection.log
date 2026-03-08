@@ -1,0 +1,120 @@
+2026-03-08 22:53:18,206 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:53:18,294 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-08 22:53:18,971 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:53:18,971 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 22:53:18,973 - action_detector - INFO - 行为检测器初始化完成
+2026-03-08 22:53:19,204 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:53:19,206 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 22:53:19,208 - export_manager - INFO - 创建导出目录: exports
+2026-03-08 22:53:19,224 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-08 22:55:53,644 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:55:53,671 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:55:53,671 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:55:53,673 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:55:53,673 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 22:55:58,254 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:55:58,509 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:55:58,511 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 22:55:58,511 - action_detector - INFO - 行为检测器初始化完成
+2026-03-08 22:55:58,856 - stream_detector - ERROR - 无法打开视频源: 0
+2026-03-08 22:56:18,207 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:56:18,207 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:56:18,209 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:56:18,209 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:56:18,209 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 22:56:19,166 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:56:19,169 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:56:19,169 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:56:19,169 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:56:19,171 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 22:56:36,492 - __main__ - INFO - 接收到上传文件: test_video.mp4
+2026-03-08 22:56:36,492 - action_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmpxg9v8e9r\upload_1772981796.486448.mp4
+2026-03-08 22:56:39,077 - feature_extractor - INFO - 视频向量提取完成: C:\Users\13008\AppData\Local\Temp\tmpxg9v8e9r\upload_1772981796.486448.mp4 (512维)
+2026-03-08 22:56:39,177 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:56:39,178 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:56:39,180 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:56:39,180 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:56:39,180 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 22:56:39,218 - action_detector - INFO - 检测完成: C:\Users\13008\AppData\Local\Temp\tmpxg9v8e9r\upload_1772981796.486448.mp4 - 拖地 (拖地相似度: 0.845)
+2026-03-08 22:56:49,244 - __main__ - INFO - 接收到上传文件: test_video1.mp4
+2026-03-08 22:56:49,246 - action_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmpxg9v8e9r\upload_1772981809.241668.mp4
+2026-03-08 22:56:51,209 - feature_extractor - INFO - 视频向量提取完成: C:\Users\13008\AppData\Local\Temp\tmpxg9v8e9r\upload_1772981809.241668.mp4 (512维)
+2026-03-08 22:56:51,301 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:56:51,302 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:56:51,302 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:56:51,302 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:56:51,304 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 22:56:51,307 - action_detector - INFO - 检测完成: C:\Users\13008\AppData\Local\Temp\tmpxg9v8e9r\upload_1772981809.241668.mp4 - 非拖地 (拖地相似度: 0.756)
+2026-03-08 22:58:13,719 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:58:13,763 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-08 22:58:14,096 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:58:14,098 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 22:58:14,098 - action_detector - INFO - 行为检测器初始化完成
+2026-03-08 22:58:14,348 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 22:58:14,350 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 22:58:14,364 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-08 22:58:22,581 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:58:22,599 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:58:22,600 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:58:22,600 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:58:22,602 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 22:58:26,304 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 22:58:26,306 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 22:58:26,306 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 22:58:26,306 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 22:58:26,307 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 23:13:05,630 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 23:13:05,670 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-08 23:13:05,992 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 23:13:05,992 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 23:13:05,993 - action_detector - INFO - 行为检测器初始化完成
+2026-03-08 23:13:06,242 - feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 23:13:06,244 - db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 23:13:06,258 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-08 23:13:11,690 - db_manager - INFO - 向量库状态 - 总数据量：11
+2026-03-08 23:13:11,707 - db_manager - INFO -   - 拖地视频数量：6
+2026-03-08 23:13:11,708 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 23:13:11,708 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 23:13:11,710 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 23:13:36,999 - db_manager - INFO - 开始入库 mopping 视频（共1个）
+2026-03-08 23:13:37,000 - db_manager - INFO - 处理 [1/1]: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\db_add_1772982816.996612.mp4
+2026-03-08 23:13:39,271 - feature_extractor - INFO - 视频向量提取完成: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\db_add_1772982816.996612.mp4 (512维)
+2026-03-08 23:13:39,449 - db_manager - INFO - 入库成功（ID：mopping_1772982819_0）
+2026-03-08 23:13:39,450 - db_manager - INFO - 入库完成：成功1/1个
+2026-03-08 23:13:39,461 - db_manager - INFO - 向量库状态 - 总数据量：12
+2026-03-08 23:13:39,464 - db_manager - INFO -   - 拖地视频数量：7
+2026-03-08 23:13:39,464 - db_manager - INFO -   - 非拖地视频数量：5
+2026-03-08 23:13:39,464 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 23:13:39,466 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 23:13:48,918 - db_manager - INFO - 开始入库 non_mopping 视频（共1个）
+2026-03-08 23:13:48,919 - db_manager - INFO - 处理 [1/1]: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\db_add_1772982828.915788.mp4
+2026-03-08 23:13:51,179 - feature_extractor - INFO - 视频向量提取完成: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\db_add_1772982828.915788.mp4 (512维)
+2026-03-08 23:13:51,293 - db_manager - INFO - 入库成功（ID：non_mopping_1772982831_0）
+2026-03-08 23:13:51,293 - db_manager - INFO - 入库完成：成功1/1个
+2026-03-08 23:13:51,301 - db_manager - INFO - 向量库状态 - 总数据量：13
+2026-03-08 23:13:51,303 - db_manager - INFO -   - 拖地视频数量：7
+2026-03-08 23:13:51,303 - db_manager - INFO -   - 非拖地视频数量：6
+2026-03-08 23:13:51,304 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 23:13:51,304 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 23:13:58,113 - __main__ - INFO - 接收到上传文件: test_video.mp4
+2026-03-08 23:13:58,113 - action_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\upload_1772982838.108508.mp4
+2026-03-08 23:14:00,135 - feature_extractor - INFO - 视频向量提取完成: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\upload_1772982838.108508.mp4 (512维)
+2026-03-08 23:14:00,207 - db_manager - INFO - 向量库状态 - 总数据量：13
+2026-03-08 23:14:00,208 - db_manager - INFO -   - 拖地视频数量：7
+2026-03-08 23:14:00,210 - db_manager - INFO -   - 非拖地视频数量：6
+2026-03-08 23:14:00,210 - db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 23:14:00,210 - db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-08 23:14:00,231 - action_detector - INFO - 检测完成: C:\Users\13008\AppData\Local\Temp\tmp36m8r_nu\upload_1772982838.108508.mp4 - 拖地 (拖地相似度: 1.000)
+2026-03-08 23:26:20,909 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 23:26:21,020 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-08 23:26:21,329 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 23:26:21,330 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 23:26:21,330 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-08 23:26:21,560 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-08 23:26:21,561 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-08 23:26:21,578 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-08 23:26:26,866 - core.managers.db_manager - INFO - 向量库状态 - 总数据量：13
+2026-03-08 23:26:26,885 - core.managers.db_manager - INFO -   - 拖地视频数量：7
+2026-03-08 23:26:26,885 - core.managers.db_manager - INFO -   - 非拖地视频数量：6
+2026-03-08 23:26:26,886 - core.managers.db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-08 23:26:26,886 - core.managers.db_manager - INFO -   - 向量维度：512（配置默认）

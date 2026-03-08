@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd849bbc-677e-4bc5-a247-3a65e8fd2ef1" name="更改" comment="" />
+    <list default="true" id="bd849bbc-677e-4bc5-a247-3a65e8fd2ef1" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action_detector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_mopping_videos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_non_mopping_videos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clear_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detect_mopping.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature_extractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_video1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_embedding_db/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/video_embedding_db/chroma.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_embedding_db/d3b4a055-086a-4654-9579-54221875006a/data_level0.bin" beforeDir="false" afterPath="$PROJECT_DIR$/video_embedding_db/d3b4a055-086a-4654-9579-54221875006a/data_level0.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_embedding_db/d3b4a055-086a-4654-9579-54221875006a/length.bin" beforeDir="false" afterPath="$PROJECT_DIR$/video_embedding_db/d3b4a055-086a-4654-9579-54221875006a/length.bin" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,36 +46,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.add_mopping_videos.executor": "Run",
-    "Python.add_non_mopping_videos.executor": "Run",
-    "Python.check_db.executor": "Run",
-    "Python.check_db_data.executor": "Run",
-    "Python.clear_db.executor": "Run",
-    "Python.detect_mopping.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.main_pose_vector.executor": "Run",
-    "Python.step1_add_mopping.executor": "Run",
-    "Python.step1_add_mopping_video.executor": "Run",
-    "Python.step2_add_non_mopping.executor": "Run",
-    "Python.step2_check_db.executor": "Run",
-    "Python.step2_save_positive.executor": "Run",
-    "Python.step3_detect_mopping.executor": "Run",
-    "Python.video_processor.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/PoseYOLO",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.add_mopping_videos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.add_non_mopping_videos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.check_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.check_db_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.clear_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.detect_mopping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_pose_vector.executor&quot;: &quot;Run&quot;,
+    &quot;Python.step1_add_mopping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.step1_add_mopping_video.executor&quot;: &quot;Run&quot;,
+    &quot;Python.step2_add_non_mopping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.step2_check_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.step2_save_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python.step3_detect_mopping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_processor.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/PoseYOLO&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PoseYOLO" />
@@ -235,7 +255,9 @@
       <workItem from="1772805535740" duration="4980000" />
       <workItem from="1772811499328" duration="1291000" />
       <workItem from="1772812919550" duration="2770000" />
-      <workItem from="1772816041685" duration="4477000" />
+      <workItem from="1772816041685" duration="5310000" />
+      <workItem from="1772821742538" duration="265000" />
+      <workItem from="1772981469020" duration="2396000" />
     </task>
     <servers />
   </component>
