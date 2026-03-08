@@ -118,3 +118,142 @@
 2026-03-08 23:26:26,885 - core.managers.db_manager - INFO -   - 非拖地视频数量：6
 2026-03-08 23:26:26,886 - core.managers.db_manager - INFO -   - 无效元数据数量（无action_type）：0
 2026-03-08 23:26:26,886 - core.managers.db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-09 00:30:31,350 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:30:31,469 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 00:30:31,766 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:30:31,767 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 00:30:31,768 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 00:30:32,007 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:30:32,009 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 00:30:32,056 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 00:30:32,058 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 00:30:32,235 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 00:30:32,272 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 00:30:32,273 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 00:30:32,294 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-09 00:30:37,733 - core.managers.db_manager - INFO - 向量库状态 - 总数据量：13
+2026-03-09 00:30:37,751 - core.managers.db_manager - INFO -   - 拖地视频数量：7
+2026-03-09 00:30:37,751 - core.managers.db_manager - INFO -   - 非拖地视频数量：6
+2026-03-09 00:30:37,751 - core.managers.db_manager - INFO -   - 无效元数据数量（无action_type）：0
+2026-03-09 00:30:37,751 - core.managers.db_manager - INFO -   - 向量维度：512（配置默认）
+2026-03-09 00:36:08,214 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:36:08,323 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 00:36:08,668 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:36:08,670 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 00:36:08,670 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 00:36:08,908 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:36:08,908 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 00:36:08,947 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 00:36:08,948 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 00:36:09,129 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 00:36:09,167 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 00:36:09,167 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 00:36:09,238 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-09 00:37:15,133 - httpx - INFO - HTTP Request: GET https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz "HTTP/1.1 200 OK"
+2026-03-09 00:39:37,001 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:39:37,109 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 00:39:37,405 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:39:37,405 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 00:39:37,407 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 00:39:37,643 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 00:39:37,643 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 00:39:37,683 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 00:39:37,685 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 00:39:37,850 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 00:39:37,889 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 00:39:37,889 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 00:39:37,918 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-09 00:39:43,344 - core.managers.behavior_manager - ERROR - 创建行为失败: Collection [behavior_mop] already exists
+2026-03-09 00:39:43,344 - __main__ - ERROR - 创建行为失败: Collection [behavior_mop] already exists
+2026-03-09 00:39:47,024 - core.managers.behavior_manager - ERROR - 创建行为失败: Collection [behavior_mop] already exists
+2026-03-09 00:39:47,025 - __main__ - ERROR - 创建行为失败: Collection [behavior_mop] already exists
+2026-03-09 00:40:15,520 - httpx - INFO - HTTP Request: GET https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz "HTTP/1.1 200 OK"
+2026-03-09 00:44:41,912 - core.managers.behavior_manager - INFO - 成功创建行为: mopping (拖地)
+2026-03-09 00:46:56,842 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 mopping: mopping_20260309_004656
+2026-03-09 00:47:06,889 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 mopping: mopping_20260309_004706
+2026-03-09 00:47:13,013 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 mopping: mopping_20260309_004712
+2026-03-09 00:47:22,286 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 mopping: mopping_20260309_004722
+2026-03-09 00:47:30,943 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 mopping: mopping_20260309_004730
+2026-03-09 00:48:40,151 - core.managers.behavior_manager - INFO - 成功创建行为: phone (玩手机)
+2026-03-09 00:50:19,446 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 phone: phone_20260309_005019
+2026-03-09 00:50:23,888 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 phone: phone_20260309_005023
+2026-03-09 00:50:28,708 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 phone: phone_20260309_005028
+2026-03-09 00:51:08,233 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988668.229957.mp4
+2026-03-09 00:51:10,118 - core.detectors.dynamic_detector - INFO - 检测完成: 玩手机 (0.571)
+2026-03-09 00:52:03,348 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 phone: phone_20260309_005203
+2026-03-09 00:52:14,794 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988734.791083.mp4
+2026-03-09 00:52:16,471 - core.detectors.dynamic_detector - INFO - 检测完成: 玩手机 (0.571)
+2026-03-09 00:52:22,835 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988742.832113.mp4
+2026-03-09 00:52:24,776 - core.detectors.dynamic_detector - INFO - 检测完成: 玩手机 (1.000)
+2026-03-09 00:52:31,493 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988751.491818.mp4
+2026-03-09 00:52:33,224 - core.detectors.dynamic_detector - INFO - 检测完成: 玩手机 (0.571)
+2026-03-09 00:52:58,994 - core.detectors.dynamic_detector - INFO - 成功添加训练视频到 phone: phone_20260309_005258
+2026-03-09 00:53:17,537 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988797.534449.mp4
+2026-03-09 00:53:19,750 - core.detectors.dynamic_detector - INFO - 检测完成: 玩手机 (0.558)
+2026-03-09 00:53:26,842 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988806.839883.mp4
+2026-03-09 00:53:28,273 - core.detectors.dynamic_detector - INFO - 检测完成: 拖地 (0.465)
+2026-03-09 00:53:35,284 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988815.281589.mp4
+2026-03-09 00:53:36,746 - core.detectors.dynamic_detector - INFO - 检测完成: 拖地 (0.399)
+2026-03-09 00:53:48,731 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988828.726183.mp4
+2026-03-09 00:53:51,111 - core.detectors.dynamic_detector - INFO - 检测完成: 拖地 (1.000)
+2026-03-09 00:53:55,905 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988835.901221.mp4
+2026-03-09 00:53:58,818 - core.detectors.dynamic_detector - INFO - 检测完成: 拖地 (1.000)
+2026-03-09 00:54:39,873 - core.detectors.dynamic_detector - INFO - 开始检测视频: C:\Users\13008\AppData\Local\Temp\tmphvrhpjx0\detect_dynamic_1772988879.8717.mp4
+2026-03-09 00:54:41,289 - core.detectors.dynamic_detector - INFO - 检测完成: 玩手机 (0.608)
+2026-03-09 01:06:45,074 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:06:45,214 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 01:06:45,496 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:06:45,498 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:06:45,498 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 01:06:45,733 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:06:45,733 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:06:45,772 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:06:45,772 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 01:06:45,967 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 01:06:46,008 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:06:46,009 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 01:06:46,031 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-09 01:06:54,861 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:06:55,098 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:06:55,143 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:06:55,144 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 01:06:55,392 - core.detectors.stream_detector - ERROR - 无法打开视频源: 0
+2026-03-09 01:11:23,197 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:11:23,314 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 01:11:23,628 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:11:23,628 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:11:23,630 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 01:11:23,858 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:11:23,858 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:11:23,895 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:11:23,896 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 01:11:24,068 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 01:11:24,109 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:11:24,109 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 01:11:24,134 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-09 01:19:10,884 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:19:10,999 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 01:19:11,310 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:19:11,310 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:19:11,312 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 01:19:11,540 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:19:11,540 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:19:11,578 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:19:11,578 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 01:19:11,750 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 01:19:11,787 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:19:11,787 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 01:19:11,811 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000
+2026-03-09 01:24:18,696 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:24:18,801 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-03-09 01:24:19,122 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:24:19,122 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:24:19,123 - core.detectors.action_detector - INFO - 行为检测器初始化完成
+2026-03-09 01:24:19,370 - core.extractors.feature_extractor - INFO - 特征提取器初始化完成，使用模型: resnet18
+2026-03-09 01:24:19,393 - core.managers.db_manager - INFO - 数据库管理器初始化完成
+2026-03-09 01:24:19,435 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:24:19,435 - core.extractors.universal_extractor - INFO - 使用CPU
+2026-03-09 01:24:19,603 - core.extractors.universal_extractor - INFO - 通用特征提取器初始化完成: resnet18, 输入尺寸: 224, 采样帧数: 32
+2026-03-09 01:24:19,642 - core.managers.behavior_manager - INFO - 行为元数据集合初始化完成
+2026-03-09 01:24:19,642 - core.detectors.dynamic_detector - INFO - 动态行为检测器初始化完成
+2026-03-09 01:24:19,671 - __main__ - INFO - 启动 API 服务: http://0.0.0.0:8000

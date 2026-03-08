@@ -1,52 +1,68 @@
-<<<<<<< HEAD
-# PoseYOLO - 拖地行为检测系统 v2.0
+# PoseYOLO - 员工行为检测系统 v3.0
 
 ![UI界面](./UI.png)
 
-基于深度学习的视频行为检测系统，通过 ResNet18/50 提取视频特征向量，结合 ChromaDB 向量数据库实现拖地行为的智能识别。
+基于深度学习的动态视频行为检测系统，支持用户自定义行为类型，通过 ResNet18/50 提取视频特征向量，结合 ChromaDB 向量数据库实现智能行为识别。
 
 ## 项目简介
 
-本项目是一个视频行为识别系统，专门用于检测视频中是否包含拖地行为。系统采用向量相似度匹配的方法，通过对比待测视频与已标注视频的特征相似度来判断行为类型。
+本项目是一个**动态行为检测系统**，用户可以通过 Web 界面自定义员工行为类型（如：拖地、收银、玩手机等），上传示例视频进行训练，系统会自动学习并识别这些行为。
 
 ### 核心特性
 
-- 基于深度学习的视频特征提取（ResNet18/ResNet50）
-- 向量数据库存储与检索（ChromaDB）
-- 多种相似度计算方法（余弦/加权/欧氏/KNN）
-- 自适应阈值学习
-- 支持 INT8 量化加速
-- 实时摄像头流检测
-- 多线程并行处理
-- RESTful API 服务
-- Web 可视化界面
-- 检测结果导出（CSV/JSON）
+- **动态行为定义** - 用户可自定义任意行为类型
+- **多行为检测** - 同时支持多种行为的识别
+- **批量视频导入** - 支持批量上传训练视频
+- **基于深度学习** - ResNet18/ResNet50 特征提取
+- **向量数据库** - ChromaDB 存储与检索
+- **INT8 量化** - 模型加速优化
+- **实时流检测** - 支持摄像头实时检测
+- **多线程并行** - 批量视频处理
+- **RESTful API** - FastAPI 服务接口
+- **Web 可视化** - 直观的操作界面
+- **Swagger 文档** - 在线 API 测试
 
 ## 项目结构
 
 ```
 PoseYOLO/
-├── config.yaml              # YAML 配置文件
-├── config.py                # 配置管理类
-├── logger.py                # 日志管理器
-├── feature_extractor.py     # 视频特征提取器（支持 ResNet18/50）
-├── db_manager.py            # 向量数据库管理器
-├── action_detector.py       # 行为检测器（含自适应阈值）
-├── stream_detector.py       # 实时流检测器 + 并行处理器
-├── export_manager.py        # 结果导出管理器
-├── api.py                   # FastAPI RESTful 服务
-├── utils.py                 # 工具函数
-├── main.py                  # 主程序入口
-├── detect_mopping.py        # 独立检测脚本
-├── add_mopping_videos.py    # 添加拖地视频到数据库
-├── add_non_mopping_videos.py # 添加非拖地视频到数据库
-├── clear_db.py              # 清空数据库脚本
-├── requirements.txt         # 依赖包列表
-├── video/                   # 测试视频目录
-├── no_video/                # 非拖地视频目录
-├── video_embedding_db/      # 向量数据库存储目录
-├── logs/                    # 日志目录
-└── exports/                 # 导出结果目录
+├── api.py                       # FastAPI 服务入口
+├── config.yaml                  # YAML 配置文件
+├── requirements.txt             # 依赖包列表
+│
+├── core/                        # 核心模块
+│   ├── utils/
+│   │   └── config.py            # 配置管理类
+│   ├── extractors/
+│   │   ├── feature_extractor.py # 视频特征提取器（旧版）
+│   │   └── universal_extractor.py # 通用特征提取器（新版）
+│   ├── detectors/
+│   │   ├── action_detector.py   # 行为检测器（旧版）
+│   │   ├── dynamic_detector.py  # 动态行为检测器（新版）
+│   │   └── stream_detector.py   # 实时流检测器
+│   └── managers/
+│       ├── db_manager.py        # 向量数据库管理器
+│       ├── behavior_manager.py  # 动态行为管理器
+│       ├── export_manager.py    # 结果导出管理器
+│       └── logger.py            # 日志管理器
+│
+├── scripts/                     # 脚本工具
+│   ├── main.py                  # 主程序入口
+│   ├── detect_mopping.py        # 拖地检测脚本（示例）
+│   ├── add_mopping_videos.py    # 添加拖地视频
+│   ├── add_non_mopping_videos.py # 添加非拖地视频
+│   └── clear_db.py              # 清空数据库
+│
+├── configs/                     # 配置文件目录
+│   └── config.yaml
+│
+├── static/                      # Web 静态文件
+│   └── index.html
+│
+├── video_embedding_db/          # 向量数据库存储
+├── behavior_db/                 # 动态行为数据库
+├── logs/                        # 日志目录
+└── exports/                     # 导出结果目录
 ```
 
 ## 安装说明
@@ -75,9 +91,188 @@ pip install -r requirements.txt
 | pyyaml | YAML 配置解析 |
 | numpy | 数值计算 |
 
+## 快速开始
+
+### 1. 启动服务
+
+```bash
+python api.py
+```
+
+服务启动后访问：
+- Web 界面：http://localhost:8000/ui
+- API 文档：http://localhost:8000/docs
+- ReDoc 文档：http://localhost:8000/redoc
+
+### 2. 使用 Web 界面
+
+#### 创建行为类型
+1. 点击「➕ 创建行为」标签页
+2. 输入行为ID（如：`cashier`）
+3. 输入显示名称（如：`收银服务`）
+4. 选择分类（卫生/服务/安全/违规/一般）
+5. 点击「创建行为」
+
+#### 添加训练视频
+1. 点击「🎓 训练数据」标签页
+2. 选择行为类型
+3. 上传该行为的示例视频（支持多选）
+4. 系统自动提取特征并存储
+
+#### 检测视频
+1. 点击「🔍 行为检测」标签页
+2. 上传待检测视频
+3. 系统自动与所有行为比对
+4. 显示最匹配的行为及置信度
+
+#### 实时摄像头检测
+1. 点击「📹 实时检测」标签页
+2. 点击「启动摄像头」按钮
+3. 系统自动从摄像头捕获视频并检测
+4. 实时显示检测结果
+
+## API 接口
+
+### 动态行为管理
+
+#### 创建行为
+```bash
+curl -X POST "http://localhost:8000/behaviors/create" \
+  -F "behavior_id=cashier" \
+  -F "display_name=收银服务" \
+  -F "category=service" \
+  -F "description=员工在收银台进行收银操作"
+```
+
+#### 列出所有行为
+```bash
+curl "http://localhost:8000/behaviors/list"
+```
+
+#### 删除行为
+```bash
+curl -X DELETE "http://localhost:8000/behaviors/cashier"
+```
+
+#### 添加单个训练视频
+```bash
+curl -X POST "http://localhost:8000/behaviors/cashier/add_video" \
+  -F "file=@cashier_demo.mp4"
+```
+
+#### 批量添加训练视频
+```bash
+curl -X POST "http://localhost:8000/behaviors/cashier/add_videos_batch" \
+  -F "files=@video1.mp4" \
+  -F "files=@video2.mp4" \
+  -F "files=@video3.mp4"
+```
+
+返回示例：
+```json
+{
+  "success": true,
+  "behavior_id": "cashier",
+  "total": 3,
+  "success_count": 3,
+  "failed_count": 0,
+  "video_count": 15
+}
+```
+
+### 行为检测
+
+#### 动态检测
+```bash
+curl -X POST "http://localhost:8000/detect/dynamic" \
+  -F "file=@test_video.mp4" \
+  -F "return_all=true"
+```
+
+返回示例：
+```json
+{
+  "behavior_id": "cashier",
+  "behavior_name": "收银服务",
+  "confidence": 0.92,
+  "is_confident": true,
+  "conclusion": "该视频最可能是：收银服务（置信度92%）",
+  "all_results": [
+    {"behavior_id": "cashier", "similarity": 0.92},
+    {"behavior_id": "mopping", "similarity": 0.15}
+  ]
+}
+```
+
+### 实时流检测
+
+#### 启动摄像头
+```bash
+curl -X POST "http://localhost:8000/stream/start" \
+  -H "Content-Type: application/json" \
+  -d '{"source": "0"}'
+```
+
+#### 获取检测结果
+```bash
+curl "http://localhost:8000/stream/result"
+```
+
+#### 停止检测
+```bash
+curl -X POST "http://localhost:8000/stream/stop"
+```
+
+## 行为分类
+
+系统支持以下行为分类：
+
+| 分类 | 说明 | 示例 |
+|------|------|------|
+| `hygiene` | 卫生行为 | 拖地、擦桌子、洗手 |
+| `service` | 服务行为 | 收银、接待、导购 |
+| `safety` | 安全行为 | 检查设备、穿戴防护 |
+| `violation` | 违规行为 | 玩手机、吸烟、打架 |
+| `general` | 一般行为 | 其他行为 |
+
+## 技术架构
+
+### 工作流程
+
+```
+1. 创建行为类型
+   ↓
+2. 上传示例视频（训练数据）
+   ↓
+3. 系统自动提取特征并存储到 ChromaDB
+   ↓
+4. 上传待检测视频
+   ↓
+5. 系统与所有行为进行相似度比对
+   ↓
+6. 返回最匹配的行为及置信度
+```
+
+### 特征提取流程
+
+1. **视频帧读取**：使用 OpenCV 读取视频
+2. **帧采样**：等间距采样 32 帧作为代表
+3. **帧预处理**：调整尺寸至 224×224，归一化处理
+4. **特征提取**：使用预训练 ResNet18/50 提取特征向量
+5. **特征聚合**：对所有帧特征取均值
+6. **向量标准化**：L2 归一化
+
+### 相似度计算
+
+使用余弦相似度进行特征比对：
+
+```
+similarity = 1 - distance(query_feature, stored_feature)
+```
+
 ## 配置文件
 
-系统使用 `config.yaml` 进行配置管理，主要配置项：
+`config.yaml` 主要配置项：
 
 ```yaml
 # 设备配置
@@ -88,330 +283,75 @@ device:
 model:
   backbone: "resnet18"  # resnet18 / resnet50
   quantization:
-    enabled: false      # 是否启用 INT8 量化
-
-# 检测配置
-detection:
-  mopping_threshold: 0.75
-  similarity_gap: 0.1
-  similarity_method: "cosine"  # cosine / weighted / euclidean / knn
-
-# 自适应阈值
-adaptive_threshold:
-  enabled: false
+    enabled: false      # INT8 量化
 
 # API 配置
 api:
   host: "0.0.0.0"
   port: 8000
-```
-
-## 使用方法
-
-### 1. 启动 API 服务
-
-```bash
-python api.py
-```
-
-服务启动后访问：
-- API 文档：http://localhost:8000/docs
-- Web 界面：http://localhost:8000/ui
-
-### 2. API 接口
-
-#### 单视频检测
-```bash
-curl -X POST "http://localhost:8000/detect" \
-  -H "accept: application/json" \
-  -F "file=@test_video.mp4"
-```
-
-#### 批量检测
-```bash
-curl -X POST "http://localhost:8000/detect/batch" \
-  -F "files=@video1.mp4" \
-  -F "files=@video2.mp4"
-```
-
-#### 查看数据库状态
-```bash
-curl "http://localhost:8000/db/status"
-```
-
-#### 添加视频到数据库
-```bash
-curl -X POST "http://localhost:8000/db/add" \
-  -F "file=@mop_video.mp4" \
-  -F "action_type=mopping"
-```
-
-#### 启动实时流检测
-```bash
-curl -X POST "http://localhost:8000/stream/start" \
-  -H "Content-Type: application/json" \
-  -d '{"source": "0"}'
-```
-
-### 3. 命令行使用
-
-```python
-from config import MoppingDetectionConfig
-from action_detector import MoppingActionDetector
-from stream_detector import ParallelVideoProcessor
-
-# 初始化配置
-config = MoppingDetectionConfig()
-
-# 单视频检测
-detector = MoppingActionDetector(config)
-is_mopping, mop_sim, non_mop_sim, details = detector.detect("test.mp4")
-
-# 批量并行检测
-processor = ParallelVideoProcessor(config)
-video_paths = ["video1.mp4", "video2.mp4", "video3.mp4"]
-results = processor.submit(video_paths)
-
-# 实时流检测
-from stream_detector import VideoStreamDetector
-stream = VideoStreamDetector(config)
-stream.start_capture(0)  # 0 为默认摄像头
-```
-
-### 4. 结果导出
-
-```python
-from export_manager import ExportManager
-
-export_manager = ExportManager(config)
-
-# 导出为 CSV
-export_manager.export_to_csv(results)
-
-# 导出为 JSON
-export_manager.export_to_json(results)
-
-# 同时导出两种格式
-export_manager.export(results, format="both")
-```
-
-## 技术架构
-
-### 特征提取流程
-
-1. **视频帧读取**：使用 OpenCV 读取视频所有帧
-2. **帧采样**：等间距采样 32 帧作为代表
-3. **帧预处理**：调整尺寸至 224×224，归一化处理
-4. **特征提取**：使用预训练 ResNet18/50 提取特征向量
-5. **特征聚合**：对所有帧特征取均值，得到视频级特征
-6. **向量标准化**：L2 归一化，便于余弦相似度计算
-
-### 检测算法
-
-支持多种相似度计算方法：
-
-- **余弦相似度**（默认）：`cosine`
-- **加权相似度**：`weighted`（时序+空间特征加权）
-- **欧氏距离**：`euclidean`
-- **KNN**：`knn`（Top-K 平均）
-
-双阈值判定策略：
-```
-判定为拖地行为需同时满足：
-1. 拖地相似度 ≥ threshold
-2. 拖地相似度 - 非拖地相似度 ≥ similarity_gap
-```
-
-### 自适应阈值
-
-启用后，系统会根据历史检测结果自动调整阈值：
-
-```yaml
-adaptive_threshold:
-  enabled: true
-  learning_rate: 0.01
-  target_accuracy: 0.95
+  web_ui_enabled: true
 ```
 
 ## 性能优化
 
 ### INT8 量化
 
-在配置中启用量化可减小模型体积并加速推理：
-
 ```yaml
 model:
   quantization:
     enabled: true
-    backend: "fbgemm"  # CPU 量化后端
+    backend: "fbgemm"
 ```
 
 ### 并行处理
 
-批量检测时自动使用多线程并行处理：
-
 ```yaml
 parallel:
   enabled: true
-  workers: 0  # 0 表示使用 CPU 核心数
-  batch_size: 4
+  workers: 0  # 0 = CPU 核心数
 ```
 
 ## 日志系统
 
-系统使用标准 logging 模块记录日志：
-
 ```yaml
 logging:
   level: "INFO"
-  file: "logs/mopping_detection.log"
+  file: "logs/detection.log"
   console: true
-  rotation:
-    enabled: true
-    max_bytes: 10485760  # 10MB
-    backup_count: 5
 ```
 
-## Web 界面
+## API 文档
 
-访问 http://localhost:8000/ui 使用可视化界面：
+启动服务后，可通过以下地址访问 API 文档：
 
-- 📤 上传视频检测
-- 📊 查看数据库状态
-- 🔴 实时摄像头检测
-- 📈 检测结果可视化
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
+
+Swagger UI 提供在线测试功能，可以直接在浏览器中测试所有 API 接口。
+
+## 兼容性说明
+
+系统保留了旧版拖地检测功能，可通过以下方式使用：
+
+```python
+# 旧版 API（兼容）
+POST /detect          # 单视频拖地检测
+POST /detect/batch    # 批量拖地检测
+GET  /db/status       # 数据库状态
+POST /db/add          # 添加视频到数据库
+
+# 新版 API（动态行为）
+POST /behaviors/create              # 创建行为
+GET  /behaviors/list                # 列出行为
+DELETE /behaviors/{id}              # 删除行为
+POST /behaviors/{id}/add_video      # 添加单个训练视频
+POST /behaviors/{id}/add_videos_batch # 批量添加训练视频
+GET  /behaviors/stats               # 获取统计信息
+POST /detect/dynamic                # 动态行为检测
+```
 
 ## 许可证
 
 本项目采用 MIT 许可证，详见 [LICENSE](LICENSE) 文件。
 
 Copyright (c) 2026 张允泽
-6. **向量标准化**：L2 归一化，便于余弦相似度计算
-
-### 检测算法
-
-采用双阈值判定策略：
-
-```
-判定为拖地行为需同时满足：
-1. 拖地相似度 ≥ 0.75
-2. 拖地相似度 - 非拖地相似度 ≥ 0.1
-```
-
-## 安装说明
-
-### 环境要求
-
-- Python 3.8+
-- CUDA（可选，用于 GPU 加速）
-
-### 安装依赖
-
-```bash
-pip install -r requirements.txt
-```
-
-### 主要依赖
-
-| 依赖包 | 用途 |
-|--------|------|
-| torch | 深度学习框架 |
-| torchvision | 图像处理与预训练模型 |
-| opencv-python | 视频读取与处理 |
-| chromadb | 向量数据库 |
-| numpy | 数值计算 |
-
-## 使用方法
-
-### 第一步：添加标注视频到数据库
-
-```python
-from config import MoppingDetectionConfig
-from db_manager import EmbeddingDBManager
-
-config = MoppingDetectionConfig()
-db_manager = EmbeddingDBManager(config)
-
-# 添加拖地视频
-mop_videos = ["video/mop_1.mp4", "video/mop_2.mp4"]
-db_manager.add_video_embeddings(mop_videos, config.ACTION_MOPPING)
-
-# 添加非拖地视频
-non_mop_videos = ["no_video/non_mop_1.mp4", "no_video/non_mop_2.mp4"]
-db_manager.add_video_embeddings(non_mop_videos, config.ACTION_NON_MOPPING)
-```
-
-### 第二步：检测视频
-
-```python
-from config import MoppingDetectionConfig
-from action_detector import MoppingActionDetector
-
-config = MoppingDetectionConfig()
-detector = MoppingActionDetector(config)
-
-# 执行检测
-is_mopping, mop_sim, non_mop_sim = detector.detect("test_video.mp4")
-
-print(f"是否拖地: {is_mopping}")
-print(f"拖地相似度: {mop_sim:.3f}")
-print(f"非拖地相似度: {non_mop_sim:.3f}")
-```
-
-### 快速检测脚本
-
-直接运行独立检测脚本：
-
-```bash
-python detect_mopping.py
-```
-
-> 使用前需修改脚本中的 `TEST_VIDEO_PATH` 变量
-
-## 配置说明
-
-在 `config.py` 中可调整以下参数：
-
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| DEVICE | auto | 计算设备（cuda/cpu） |
-| FRAME_SIZE | (224, 224) | 帧缩放尺寸 |
-| SAMPLE_FRAMES | 32 | 采样帧数 |
-| DB_PATH | video_embedding_db | 数据库存储路径 |
-| MOPPING_THRESHOLD | 0.75 | 拖地相似度阈值 |
-| SIMILARITY_GAP | 0.1 | 相似度差值阈值 |
-| TOP_K | 1 | 匹配Top-K样本 |
-
-## 核心模块说明
-
-### VideoFeatureExtractor（特征提取器）
-
-负责将视频转换为 512 维标准化特征向量：
-
-- `read_frames()`: 读取视频所有帧
-- `sample_frames()`: 等间距采样
-- `extract_frame_embedding()`: 提取单帧特征
-- `extract_video_embedding()`: 提取视频级特征
-
-### EmbeddingDBManager（数据库管理器）
-
-管理向量数据库的增删查操作：
-
-- `add_video_embeddings()`: 批量添加视频向量
-- `query_embeddings()`: 查询相似向量
-- `delete_embeddings()`: 删除指定类型数据
-- `check_db_status()`: 查看数据库状态
-
-### MoppingActionDetector（行为检测器）
-
-核心检测逻辑实现：
-
-- `calculate_similarity()`: 计算余弦相似度
-- `detect()`: 执行行为检测
-
-## 许可证
-
-本项目采用 MIT 许可证，详见 [LICENSE](LICENSE) 文件。
-
-Copyright (c) 2026 张允泽
->>>>>>> 4b61ec534e1da8d84df54dae6a55fbda059a177d
