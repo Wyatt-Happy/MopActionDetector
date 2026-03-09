@@ -67,7 +67,7 @@ export_manager = ExportManager(config)
 
 # 动态行为检测组件（新增）
 behavior_manager = BehaviorManager(config)
-dynamic_detector = DynamicBehaviorDetector(config)
+dynamic_detector = DynamicBehaviorDetector(config, use_temporal=True)
 
 # 临时文件目录
 TEMP_DIR = tempfile.mkdtemp()

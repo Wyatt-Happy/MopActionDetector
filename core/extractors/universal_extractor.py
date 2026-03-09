@@ -129,7 +129,8 @@ class UniversalFeatureExtractor:
     def extract_features(
         self,
         video_path: str,
-        task_type: str = "general"
+        task_type: str = "general",
+        return_frames: bool = False
     ) -> np.ndarray:
         """
         提取视频特征
@@ -137,9 +138,10 @@ class UniversalFeatureExtractor:
         Args:
             video_path: 视频文件路径
             task_type: 任务类型（general/hygiene/service/safety）
+            return_frames: 是否返回帧级特征列表
             
         Returns:
-            特征向量 (feature_dim,)
+            特征向量 (feature_dim,) 或帧级特征列表
         """
         try:
             # 读取视频帧
@@ -170,6 +172,9 @@ class UniversalFeatureExtractor:
                     feature = self.model(frame_tensor)
                     feature = feature.squeeze().cpu().numpy()
                     features.append(feature)
+            
+            if return_frames:
+                return features
             
             # 聚合特征（取平均）
             video_feature = np.mean(features, axis=0)

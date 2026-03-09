@@ -9,6 +9,7 @@ from typing import List, Dict, Optional, Tuple, Any
 from datetime import datetime
 from core.utils.config import MoppingDetectionConfig
 from core.extractors.universal_extractor import UniversalFeatureExtractor
+from core.extractors.temporal_extractor import TemporalFeatureExtractor
 from core.managers.behavior_manager import BehaviorManager
 from core.managers.logger import get_logger
 
@@ -25,10 +26,22 @@ class DynamicBehaviorDetector:
     - 支持动态添加新行为
     """
     
-    def __init__(self, config: MoppingDetectionConfig = None):
+    def __init__(self, config: MoppingDetectionConfig = None, use_temporal: bool = True):
         self.config = config or MoppingDetectionConfig()
         self.extractor = UniversalFeatureExtractor(config)
         self.behavior_manager = BehaviorManager(config)
+        
+        # 时序特征提取器
+        self.use_temporal = use_temporal
+        if self.use_temporal:
+            self.temporal_extractor = TemporalFeatureExtractor(
+                config=config,
+                input_size=self.extractor.get_feature_dim()
+            )
+            logger.info("启用时序特征提取")
+        else:
+            self.temporal_extractor = None
+            logger.info("使用传统特征提取")
         
         # 检测阈值
         self.similarity_threshold = 0.6  # 最低相似度阈值
@@ -61,7 +74,17 @@ class DynamicBehaviorDetector:
         try:
             # 1. 提取视频特征
             logger.info(f"开始检测视频: {video_path}")
-            query_feature = self.extractor.extract_features(video_path)
+            
+            if self.use_temporal:
+                # 提取帧级特征
+                frame_features = self.extractor.extract_features(video_path, return_frames=True)
+                # 提取时序特征
+                query_feature = self.temporal_extractor.extract(frame_features)
+                logger.info("使用时序特征进行检测")
+            else:
+                # 提取传统特征
+                query_feature = self.extractor.extract_features(video_path)
+                logger.info("使用传统特征进行检测")
             
             # 2. 获取所有行为
             behaviors = self.behavior_manager.list_behaviors()
@@ -212,7 +235,16 @@ class DynamicBehaviorDetector:
                 return False
             
             # 2. 提取特征
-            feature = self.extractor.extract_features(video_path)
+            if self.use_temporal:
+                # 提取帧级特征
+                frame_features = self.extractor.extract_features(video_path, return_frames=True)
+                # 提取时序特征
+                feature = self.temporal_extractor.extract(frame_features)
+                logger.info(f"为行为 {behavior_id} 提取时序特征")
+            else:
+                # 提取传统特征
+                feature = self.extractor.extract_features(video_path)
+                logger.info(f"为行为 {behavior_id} 提取传统特征")
             
             # 3. 生成唯一ID
             video_id = f"{behavior_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
